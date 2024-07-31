@@ -1,10 +1,14 @@
 package quest;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class Quest {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        Scanner sc = new Scanner(System.in);
         int answer = 0;
         String grade = "";
         List<String>questions=new ArrayList<>();
@@ -32,7 +36,12 @@ public class Quest {
         for(int i=0; i<questions.size(); i++){
             System.out.println(questions.get(i));
             System.out.println(choice.get(i));
-            answer=sc.nextInt();
+//            answer=sc.nextInt();
+            try {
+               answer = Integer.parseInt(br.readLine());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             userAnswers.add(answer);
         }
         System.out.println("---------------- 결과 ---------------");
