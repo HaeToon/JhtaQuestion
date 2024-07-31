@@ -37,7 +37,7 @@ public class Quest {
             System.out.println(questions.get(i));
             System.out.println(choice.get(i));
 //            answer=sc.nextInt();
-            try {
+            try { //bufferedReader를 사용할 경우 exception처리 필요
                answer = Integer.parseInt(br.readLine());
             } catch (IOException e) {
                 throw new RuntimeException(e);
